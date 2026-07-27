@@ -24,6 +24,13 @@ jQuery(function () {
         openlevels = 2;
     }
 
+    var lang = (typeof LANG !== 'undefined' && LANG.plugins && LANG.plugins.collapsetoccontent)
+        ? LANG.plugins.collapsetoccontent
+        : {};
+    var labelExpand = lang.toggle || 'Expand nested table of contents entries';
+    var labelCollapse = lang.toggle_close || 'Collapse nested table of contents entries';
+    var ulCounter = 0;
+
     /**
      * @param {jQuery} $li
      * @returns {number}
@@ -40,10 +47,15 @@ jQuery(function () {
     function setExpanded($li, expanded) {
         var $childUl = $li.children('ul');
         var $toggle = $li.children('.collapsetoccontent__toggle');
+        if (!$toggle.length) {
+            $toggle = $li.children('div.li').children('.collapsetoccontent__toggle');
+        }
 
         $li.toggleClass('collapsetoccontent__collapsed', !expanded);
         $li.toggleClass('collapsetoccontent__open', expanded);
         $toggle.attr('aria-expanded', expanded ? 'true' : 'false');
+        $toggle.attr('aria-label', expanded ? labelCollapse : labelExpand);
+        $toggle.attr('title', expanded ? labelCollapse : labelExpand);
         if (expanded) {
             $childUl.removeAttr('hidden');
         } else {
@@ -59,16 +71,21 @@ jQuery(function () {
         }
 
         // Avoid double-init if script runs more than once
-        if ($li.children('.collapsetoccontent__toggle').length) {
+        if ($li.find('> .collapsetoccontent__toggle, > div.li > .collapsetoccontent__toggle').length) {
             return;
         }
 
         var level = getLevel($li);
         var startExpanded = level < openlevels;
+        var ulId = $childUl.attr('id');
+        if (!ulId) {
+            ulCounter += 1;
+            ulId = 'collapsetoccontent__ul-' + ulCounter;
+            $childUl.attr('id', ulId);
+        }
 
         var $toggle = jQuery('<button type="button" class="collapsetoccontent__toggle"></button>');
-        $toggle.attr('aria-label', 'Toggle nested table of contents entries');
-        $toggle.attr('title', 'Toggle nested entries');
+        $toggle.attr('aria-controls', ulId);
         $toggle.append(jQuery('<span class="collapsetoccontent__icon" aria-hidden="true"></span>'));
 
         $toggle.on('click', function (e) {
