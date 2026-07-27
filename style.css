@@ -1,0 +1,44 @@
+/**
+ * Collapse ToC Content styles
+ *
+ * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+#dw__toc .collapsetoccontent__toggle {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.25em 0 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: 1;
+    cursor: pointer;
+}
+
+[dir=rtl] #dw__toc .collapsetoccontent__toggle {
+    margin: 0 0 0 0.25em;
+}
+
+#dw__toc .collapsetoccontent__icon::before {
+    content: "−";
+    display: inline-block;
+    min-width: 0.9em;
+    text-align: center;
+    font-weight: bold;
+}
+
+#dw__toc .collapsetoccontent__collapsed > .li .collapsetoccontent__icon::before,
+#dw__toc .collapsetoccontent__collapsed > .collapsetoccontent__toggle .collapsetoccontent__icon::before {
+    content: "+";
+}
+
+#dw__toc .collapsetoccontent__collapsed > ul[hidden],
+#dw__toc .collapsetoccontent__collapsed > ul {
+    display: none;
+}
+
+#dw__toc .collapsetoccontent__branch > .li > a {
+    display: inline;
+}
