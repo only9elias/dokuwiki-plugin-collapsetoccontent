@@ -15,11 +15,11 @@ edits here are picked up live with no build step.
 - Run the dev server from the DokuWiki dir, not this repo:
 `cd ~/dokuwiki && php -S 0.0.0.0:8000`. Then open `http://localhost:8000/doku.php`.
 - Admin login for testing: user `admin`, password `admin123` (ACL is enabled).
-- There is no build, lint, or test tooling in this repo yet (it is a skeleton). DokuWiki
-plugins conventionally add PHPUnit tests under `_test/` that run inside DokuWiki's own
-test harness; there is no standalone test runner here.
-- A plugin is only recognized once it contains `plugin.info.txt` plus its component
-file(s) (e.g. `action.php`, `syntax.php`). An empty repo links fine but shows nothing.
+- There is no standalone build or lint tooling in this repo. PHPUnit tests under
+`_test/` are meant to run inside DokuWiki’s own test harness (`~/dokuwiki`); there
+is no standalone test runner here.
+- The plugin is an action plugin (`action.php` + `script.js` / `style.css`) that
+enhances the core `#dw__toc` markup.
 - DokuWiki caches rendered pages and compiled CSS/JS. After changing plugin CSS/JS or  
 markup output, purge with `rm -rf ~/dokuwiki/data/cache/*` or append `&purge=true` to a  
 page URL to see changes.

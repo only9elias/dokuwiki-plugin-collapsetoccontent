@@ -8,6 +8,7 @@ Table of Contents (`#dw__toc`), controlled by headline level.
 - Branch toggles on ToC entries that have nested children
 - Heading links stay clickable (toggle is a separate control)
 - No per-page syntax and no remembered open/closed state
+- Toggle labels are localizable via `lang/*/lang.php` (`$lang['js']`)
 
 ## Installation
 
@@ -17,6 +18,9 @@ Table of Contents (`#dw__toc`), controlled by headline level.
 3. Optionally adjust settings under **Admin → Configuration Settings →
   Collapse ToC Content Plugin**.
 4. Purge the cache after CSS/JS changes (`&purge=true` or clear `data/cache`).
+
+Templates must keep core ToC markup (`#dw__toc`, nested `ul` / `li.levelN`) for
+the plugin to find and enhance the table of contents.
 
 Please refer to https://www.dokuwiki.org/extensions for additional info on how
 to install extensions in DokuWiki.

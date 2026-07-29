@@ -15,6 +15,16 @@
     font: inherit;
     line-height: 1;
     cursor: pointer;
+    border-radius: 2px;
+}
+
+#dw__toc .collapsetoccontent__toggle:focus {
+    outline: none;
+}
+
+#dw__toc .collapsetoccontent__toggle:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
 }
 
 [dir=rtl] #dw__toc .collapsetoccontent__toggle {
