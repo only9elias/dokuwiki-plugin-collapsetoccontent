@@ -7,4 +7,4 @@
  */
 
 $lang['enabled'] = 'Enable nested ToC collapse controls';
-$lang['openlevels'] = 'Headline levels that start expanded (1–5). Nested entries below this level start collapsed. Default: 2.';
+$lang['openlevels'] = 'Headline levels (see <a href="https://www.dokuwiki.org/wiki:syntax#sectioning">sectioning</a> in DokuWiki\'s syntax) that start expanded (1–5). Nested entries below this level start collapsed. Default: 2.';
