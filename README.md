@@ -1,5 +1,7 @@
 # Collapse ToC Content Plugin for DokuWiki
 
+[![made with Cursor AI](https://img.shields.io/badge/CURSOR-made_with_Cursor-26241E?logo=cursor&logoColor=ffffff&labelColor=14120B)](https://cursor.com/)
+
 DokuWiki plugin that adds nested expand/collapse controls inside the built-in
 Table of Contents (`#dw__toc`), controlled by headline level.
 
