@@ -35,7 +35,17 @@ variable is missing — ask instead.
 - **author:** only9elias
 - **url:** https://github.com/only9elias/dokuwiki-plugin-collapsetoccontent
 - **base:** `collapsetoccontent` (repo name without the `dokuwiki-plugin-` prefix)
-- **date:** `YYYY-MM-DD` of the last meaningful change when touching `plugin.info.txt`
+- **date:** Extension Manager version string (`YYYY-MM-DD`). Bump it in the **same
+  commit** as the change that ships, to that commit’s **UTC** calendar date (what
+  GitHub’s API / `devel:badextensions` compare against — e.g.
+  `TZ=UTC git log -1 --format=%ad --date=format-local:%Y-%m-%d` or `date -u +%Y-%m-%d`
+  at commit time). Keep it equal to dokuwiki.org `lastupdate` whenever the plugin
+  page exists
+  ([publishing](https://www.dokuwiki.org/devel:plugins#publishing_a_plugin_on_dokuwikiorg);
+  mismatch breaks update detection —
+  [badextensions](https://www.dokuwiki.org/devel:badextensions)). Do not leave
+  `date` behind a user-visible change on `main`, and do not bump it in a later
+  empty commit.
 
 Support and bug reports are via GitHub Issues (`url`), not email.
 
