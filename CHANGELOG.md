@@ -4,6 +4,11 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+## 2026-08-02
+
+- Exclude `AGENTS.md` and `_test/` from install archives via `.gitattributes` `export-ignore`
+- Bump `plugin.info.txt` `date`
+
 ## 2026-08-01
 
 - Localize toggle `aria-label` / `title` via DokuWiki `LANG.plugins` (`lang/en/lang.php`)
