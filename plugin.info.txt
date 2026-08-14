@@ -1,7 +1,7 @@
 base   collapsetoccontent
 author only9elias
 email  elias@noreply.blubb.app
-date   2026-08-02
+date   2026-08-14
 name   Collapse ToC Content Plugin
 desc   Collapse nested Table of Contents entries by headline level
 url    https://github.com/only9elias/dokuwiki-plugin-collapsetoccontent

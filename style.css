@@ -4,10 +4,21 @@
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
  */
 
+#dw__toc li.collapsetoccontent__branch {
+    list-style: none;
+}
+
+#dw__toc .collapsetoccontent__branch > .li {
+    position: relative;
+}
+
 #dw__toc .collapsetoccontent__toggle {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.25em 0 0;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1em;
+    margin: 0;
     padding: 0;
     border: 0;
     background: transparent;
@@ -28,13 +39,14 @@
 }
 
 [dir=rtl] #dw__toc .collapsetoccontent__toggle {
-    margin: 0 0 0 0.25em;
+    right: auto;
+    left: 100%;
 }
 
 #dw__toc .collapsetoccontent__icon::before {
     content: "−";
     display: inline-block;
-    min-width: 0.9em;
+    min-width: 1em;
     text-align: center;
     font-weight: bold;
 }
@@ -47,8 +59,4 @@
 #dw__toc .collapsetoccontent__collapsed > ul[hidden],
 #dw__toc .collapsetoccontent__collapsed > ul {
     display: none;
-}
-
-#dw__toc .collapsetoccontent__branch > .li > a {
-    display: inline;
 }

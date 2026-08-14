@@ -22,7 +22,10 @@ Table of Contents (`#dw__toc`), controlled by headline level.
 4. Purge the cache after CSS/JS changes (`&purge=true` or clear `data/cache`).
 
 Templates must keep core ToC markup (`#dw__toc`, nested `ul` / `li.levelN`) for
-the plugin to find and enhance the table of contents.
+the plugin to find and enhance the table of contents. Collapse controls hang in
+the list indent to the left of each branch heading, so the template also needs
+a left gutter (the default `dokuwiki` template’s list padding / bullets).
+Templates with no left padding will clip or overflow the hanging control.
 
 Please refer to https://www.dokuwiki.org/extensions for additional info on how
 to install extensions in DokuWiki.
