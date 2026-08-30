@@ -4,6 +4,11 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+## 2026-08-14
+
+- Hang nested ToC `+/−` controls in the list indent so branch headings no longer shift right
+- Bump `plugin.info.txt` `date`
+
 ## 2026-08-02
 
 - Exclude `AGENTS.md` and `_test/` from install archives via `.gitattributes` `export-ignore`
